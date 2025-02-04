@@ -1,0 +1,130 @@
+/* Start Global Rules */
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    text-transform: capitalize;
+}
+:root {
+  --main-background-color: #0f0f0f;
+  --text-color: #f4f5f6;
+  --hover-color: #f8c601;
+}
+body {
+  font-family: "Open Sans", "sans-serif";
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* small */
+@media (min-width: 767px) {
+  .container {
+    width: 750px;
+  }
+}
+/* medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+body {
+    background-color: var(--main-background-color);
+}
+/* End Global Rules */
+/* Start Header */
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .container .logo {
+    position: relative;
+    flex-basis: 10%;
+}
+@media(max-width:767px) {
+    .header .container .logo {
+        display: none;
+    }
+}
+.header .container .logo img {
+    width: 60%;
+    border-radius: 50%;
+}
+.header .container ul.list {
+    flex-basis: 60%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.header .container ul.list li {
+    padding: 0px 20px;
+    position: relative;
+}
+.header .container ul.list li a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: 0.5s;
+    padding: 10px 10px;
+}
+.header .container ul.list li a:hover {
+    border-bottom: 1px solid var(--hover-color);
+    background-color: #28220a;
+    color: #e2e255;
+}
+.header .container .search {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+.header .container .search div {
+    background-color: #191c22;
+    display: flex;
+    padding: 15px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+.header .container .search i {
+    font-size: 15px;
+    color: #AEB2B5;
+    padding-right: 10px;
+    cursor: pointer;
+}
+.header .container .search div i {
+    margin-top: 2px;
+}
+.header .container .search input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--text-color);
+}
+.header .container .search i.fa-solid.fa-circle-half-stroke {
+    background-color: #191c22;
+    padding: 18px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+.header .container .search button {
+    background-color: var(--hover-color);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+/* End Header */
