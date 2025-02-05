@@ -69,7 +69,7 @@ themeToggle.addEventListener("click", () => {
 });
 
 function enableDarkMode() {
-  root.removeAttribute("data-theme");  // Remove light theme
+  root.removeAttribute("data-theme"); // Remove light theme
   body.classList.remove("light-mode");
   logo.src = "images/LogoWhite.png";
 }
