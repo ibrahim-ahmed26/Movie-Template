@@ -13,15 +13,20 @@ const options = {
 // Language original_language
 // text overview
 // release_date
+let image = document.querySelector("img#poster-path");
+let imageTwo = document.querySelector("img#poster-path-2");
+let imageThree = document.querySelector("img#poster-path-3");
 async function getData() {
   let myResponse = await fetch(
     "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc",
     options
   );
   let myData = await myResponse.json();
-  myData.results.forEach((element) => {
-    console.log(element);
-  });
+  // Use first movie's poster
+  const firstMovie = myData.results[3];
+  image.src = `https://image.tmdb.org/t/p/w500${firstMovie.poster_path}`;
+  imageTwo.src = `https://image.tmdb.org/t/p/w500${firstMovie.poster_path}`;
+  imageThree.src = `https://image.tmdb.org/t/p/w500${firstMovie.poster_path}`;
 }
 getData();
 
