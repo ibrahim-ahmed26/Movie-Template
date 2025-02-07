@@ -238,3 +238,53 @@ body {
   }
 }
 /* End Landing Page */
+/* Start Top Movies Page */
+.top-movies .container .head-text {
+  color: var(--text-color);
+}
+.top-movies .container .head-text h3 span {
+  animation: light-up ease-in-out 5s infinite;
+}
+.top-movies .container .big-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+  gap: 20px;
+}
+.top-movies .container .big-box .box {
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.top-movies .container .big-box .box img {
+  width: 100%;
+}
+.top-movies .container .big-box .box .text {
+  position: absolute;
+  bottom: -100%;
+  color: white;
+  transition: 0.5s;
+  background-color: rgb(0, 0, 0,60%);
+  width: 100%;
+  left: 0%;
+  padding: 0px 10px;
+}
+.top-movies .container .big-box .box:hover .text {
+  bottom: 0%;
+}
+.top-movies .container .big-box .box .text p:last-child {
+  line-height: 1.6;
+}
+/* Ending Top Movies Page */
+/* Start Animation */
+@keyframes light-up {
+  0% {
+    color: var(--text-color);
+  }
+  50% {
+    color: var(--hover-color);
+  }
+  100% {
+    color: var(--text-color);
+  }
+}
+/* End Animation */

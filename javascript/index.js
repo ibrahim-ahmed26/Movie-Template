@@ -13,9 +13,21 @@ const options = {
 // Language original_language
 // text overview
 // release_date
-let image = document.querySelector("img#poster-path");
-let imageTwo = document.querySelector("img#poster-path-2");
-let imageThree = document.querySelector("img#poster-path-3");
+let imageOne = document.querySelector("img#product-1");
+let imageTwo = document.querySelector("img#product-2");
+let imageThree = document.querySelector("img#product-3");
+let titleOne = document.querySelector("h4.title");
+let titleTwo = document.querySelector("h4.title-2");
+let titleThree = document.querySelector("h4.title-3");
+let ratingOne = document.querySelector("p.rating");
+let ratingTwo = document.querySelector("p.rating-2");
+let ratingThree = document.querySelector("p.rating-3");
+let overviewOne = document.querySelector("p.overview");
+let overviewTwo = document.querySelector("p.overview-2");
+let overviewThree = document.querySelector("p.overview-3");
+let releaseDateOne = document.querySelector("p.release_date");
+let releaseDateTwo = document.querySelector("p.release_date-2");
+let releaseDateThree = document.querySelector("p.release_date-3");
 async function getData() {
   let myResponse = await fetch(
     "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc",
@@ -23,10 +35,24 @@ async function getData() {
   );
   let myData = await myResponse.json();
   // Use first movie's poster
-  const firstMovie = myData.results[3];
-  image.src = `https://image.tmdb.org/t/p/w500${firstMovie.poster_path}`;
-  imageTwo.src = `https://image.tmdb.org/t/p/w500${firstMovie.poster_path}`;
-  imageThree.src = `https://image.tmdb.org/t/p/w500${firstMovie.poster_path}`;
+  const firstMovie = myData.results[8];
+  const secondMovie = myData.results[9];
+  const thirdMovie = myData.results[11];
+  imageOne.src = `https://image.tmdb.org/t/p/w500${firstMovie.poster_path}`;
+  imageTwo.src = `https://image.tmdb.org/t/p/w500${secondMovie.poster_path}`;
+  imageThree.src = `https://image.tmdb.org/t/p/w500${thirdMovie.poster_path}`;
+  titleOne.innerHTML = `${firstMovie.title}`;
+  titleTwo.innerHTML = `${secondMovie.title}`;
+  titleThree.innerHTML = `${thirdMovie.title}`;
+  ratingOne.innerHTML = ` Rating: ${Number(firstMovie.vote_average).toFixed(1)}`;
+  ratingTwo.innerHTML = ` Rating: ${Number(secondMovie.vote_average).toFixed(1)}`;
+  ratingThree.innerHTML = ` Rating: ${Number(thirdMovie.vote_average).toFixed(1)}`;
+  overviewOne.innerHTML = `${firstMovie.overview}`;
+  overviewTwo.innerHTML = `${secondMovie.overview}`;
+  overviewThree.innerHTML = `${thirdMovie.overview}`;
+  releaseDateOne.innerHTML = `Release-Date: ${firstMovie.release_date}`;
+  releaseDateTwo.innerHTML = `Release-Date: ${secondMovie.release_date}`;
+  releaseDateThree.innerHTML = `Release-Date: ${thirdMovie.release_date}`;
 }
 getData();
 
