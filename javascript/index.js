@@ -28,25 +28,39 @@ let overviewThree = document.querySelector("p.overview-3");
 let releaseDateOne = document.querySelector("p.release_date");
 let releaseDateTwo = document.querySelector("p.release_date-2");
 let releaseDateThree = document.querySelector("p.release_date-3");
+let animeOneImage = document.querySelector("img#product-anime");
+let animeTwoImage = document.querySelector("img#product-anime2");
+let animeThreeImage = document.querySelector("img#product-anime3");
 async function getData() {
   let myResponse = await fetch(
     "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc",
     options
   );
   let myData = await myResponse.json();
-  // Use first movie's poster
-  const firstMovie = myData.results[8];
-  const secondMovie = myData.results[9];
-  const thirdMovie = myData.results[11];
+  const firstMovie = myData.results[7];
+  const secondMovie = myData.results[11];
+  const thirdMovie = myData.results[12];
+  const fourthMovie = myData.results[0];
+  const fifthMoive = myData.results[9];
+  const sixthMovie = myData.results[2];
   imageOne.src = `https://image.tmdb.org/t/p/w500${firstMovie.poster_path}`;
   imageTwo.src = `https://image.tmdb.org/t/p/w500${secondMovie.poster_path}`;
-  imageThree.src = `https://image.tmdb.org/t/p/w500${thirdMovie.poster_path}`;
+  imageThree.src = `https://image.tmdb.org/t/p/w500${thirdMovie.poster_path}`; 
+  animeOneImage.src = `https://image.tmdb.org/t/p/w500${fourthMovie.poster_path}`; 
+  animeTwoImage.src = `https://image.tmdb.org/t/p/w500${fifthMoive.poster_path}`; 
+  animeThreeImage.src = `https://image.tmdb.org/t/p/w500${sixthMovie.poster_path}`; 
   titleOne.innerHTML = `${firstMovie.title}`;
   titleTwo.innerHTML = `${secondMovie.title}`;
   titleThree.innerHTML = `${thirdMovie.title}`;
-  ratingOne.innerHTML = ` Rating: ${Number(firstMovie.vote_average).toFixed(1)}`;
-  ratingTwo.innerHTML = ` Rating: ${Number(secondMovie.vote_average).toFixed(1)}`;
-  ratingThree.innerHTML = ` Rating: ${Number(thirdMovie.vote_average).toFixed(1)}`;
+  ratingOne.innerHTML = ` Rating: ${Number(firstMovie.vote_average).toFixed(
+    1
+  )}`;
+  ratingTwo.innerHTML = ` Rating: ${Number(secondMovie.vote_average).toFixed(
+    1
+  )}`;
+  ratingThree.innerHTML = ` Rating: ${Number(thirdMovie.vote_average).toFixed(
+    1
+  )}`;
   overviewOne.innerHTML = `${firstMovie.overview}`;
   overviewTwo.innerHTML = `${secondMovie.overview}`;
   overviewThree.innerHTML = `${thirdMovie.overview}`;
