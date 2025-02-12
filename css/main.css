@@ -204,7 +204,7 @@ body {
   width: 100%;
   height: 600px;
 }
-@media(max-width:767px) {
+@media (max-width: 767px) {
   .landing .image img {
     height: 100%;
   }
@@ -214,14 +214,14 @@ body {
   z-index: 2;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   text-align: center;
   color: white;
 }
 .landing .content h3 {
   font-size: 30px;
 }
-@media(max-width:767px) {
+@media (max-width: 767px) {
   .landing .content h3 {
     font-size: 20px;
   }
@@ -232,7 +232,7 @@ body {
   max-width: 350px;
   opacity: 0.8;
 }
-@media(max-width:767px) {
+@media (max-width: 767px) {
   .landing .content p {
     width: 350px;
   }
@@ -247,7 +247,7 @@ body {
 }
 .action-movies .container .big-box {
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 20px;
 }
 .action-movies .container .big-box .box {
@@ -263,7 +263,7 @@ body {
   bottom: -100%;
   color: white;
   transition: 0.5s;
-  background-color: rgb(0, 0, 0,60%);
+  background-color: rgb(0, 0, 0, 60%);
   width: 100%;
   left: 0%;
   padding: 0px 10px;
@@ -284,7 +284,7 @@ body {
 }
 .anime-movies .container .big-box {
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 20px;
 }
 .anime-movies .container .big-box .box {
@@ -300,7 +300,7 @@ body {
   bottom: -100%;
   color: white;
   transition: 0.5s;
-  background-color: rgb(0, 0, 0,60%);
+  background-color: rgb(0, 0, 0, 60%);
   width: 100%;
   left: 0%;
   padding: 0px 10px;
@@ -311,7 +311,82 @@ body {
 .anime-movies .container .big-box .box .text p:last-child {
   line-height: 1.6;
 }
-/* Start Anime Movies */
+/* End Anime Movies */
+/* Start Horror Movies */
+.horror-movies .container .head-text {
+  color: var(--text-color);
+}
+.horror-movies .container .head-text h3 span {
+  animation: light-up ease-in-out 5s infinite;
+}
+.horror-movies .container .big-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+.horror-movies .container .big-box .box {
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.horror-movies .container .big-box .box img {
+  width: 100%;
+}
+.horror-movies .container .big-box .box .text {
+  position: absolute;
+  bottom: -100%;
+  color: white;
+  transition: 0.5s;
+  background-color: rgb(0, 0, 0, 60%);
+  width: 100%;
+  left: 0%;
+  padding: 0px 10px;
+}
+.horror-movies .container .big-box .box:hover .text {
+  bottom: 0%;
+}
+.horror-movies .container .big-box .box .text p:last-child {
+  line-height: 1.6;
+}
+/* End Horror Movies */
+/* Start Subscription */
+[data-theme="light"] .subscribe {
+  background-color: #0f0f0f;
+}
+[data-theme="light"] .subscribe .head-text {
+  color: white;
+}
+[data-theme="light"] .subscribe .big-box {
+  color: #777;
+}
+[data-theme="light"] .subscribe .big-box .box .text {
+  color: white;
+}
+.subscribe {
+  background-color: white;
+}
+.subscribe .head-text {
+  color: black;
+  text-align: center;
+}
+.subscribe .big-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+.subscribe .big-box .box {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  padding: 10px;
+  color: #777;
+}
+.subscribe .big-box .box .text {
+  text-align: center;
+  color: black;
+  border-bottom: 1px solid #777;
+}
+/* End Subscription */
 /* Start Animation */
 @keyframes light-up {
   0% {
