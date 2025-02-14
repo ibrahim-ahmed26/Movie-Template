@@ -364,6 +364,7 @@ body {
 }
 .subscribe {
   background-color: white;
+  padding: 60px 0px;
 }
 .subscribe .head-text {
   color: black;
@@ -380,13 +381,56 @@ body {
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   padding: 10px;
   color: #777;
+  transition: 0.5s;
+  position: relative;
+  border-radius: 10px;
+}
+.subscribe .big-box .box:hover {
+  background-color: #33a7ff;
+  transform: translateY(-10px);
+  color: black;
 }
 .subscribe .big-box .box .text {
   text-align: center;
   color: black;
   border-bottom: 1px solid #777;
 }
+.subscribe .big-box .box i {
+  position: relative;
+}
+.subscribe .big-box .box:hover i {
+  animation: moves-right linear 0.8s infinite;
+  color: #33FFD1;
+}
+.subscribe .big-box .box .button {
+  position: relative;
+}
+.subscribe .big-box .box .button p {
+  padding: 10px;
+  background-color: #33FFD1;
+  width: fit-content;
+  color: black;
+  margin: 0px auto;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.subscribe .big-box .box:nth-child(2) .button p {
+  margin-top: 90px;
+}
+.subscribe .big-box .box:nth-child(1) .button p {
+  margin-top: 130px;
+}
 /* End Subscription */
+/* start Footer */
+.footer {
+  padding: 20px 0px;
+  text-align: center;
+}
+.footer .container p {
+  color: var(--text-color);
+  font-size: 25px;
+}
+/* End Footer */
 /* Start Animation */
 @keyframes light-up {
   0% {
@@ -397,6 +441,17 @@ body {
   }
   100% {
     color: var(--text-color);
+  }
+}
+@keyframes moves-right {
+  0% {
+    left: 0%;
+  }
+  50% {
+    left: 1%;
+  }
+  100% {
+    left: 0%;
   }
 }
 /* End Animation */

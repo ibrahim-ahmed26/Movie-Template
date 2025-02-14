@@ -81,33 +81,35 @@ let releaseDateThreeHorror = document.querySelector(
   ".horror-movies p.release_date-3"
 );
 async function getData() {
-  let myResponse = await fetch(
-    "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc",
-    options
-  );
-  let myData = await myResponse.json();
-  const firstMovie = myData.results[8];
-  const secondMovie = myData.results[11];
-  const thirdMovie = myData.results[7];
-  const fourthMovie = myData.results[0];
-  const fifthMoive = myData.results[3];
-  const sixthMovie = myData.results[1];
-  const seventhMovie = myData.results[4];
-  const eigthMovie = myData.results[13];
-  const ninethMovie = myData.results[12];
-  imageOne.src = `https://image.tmdb.org/t/p/w500${firstMovie.poster_path}`;
-  imageTwo.src = `https://image.tmdb.org/t/p/w500${secondMovie.poster_path}`;
-  imageThree.src = `https://image.tmdb.org/t/p/w500${thirdMovie.poster_path}`;
-  animeOneImage.src = `https://image.tmdb.org/t/p/w500${fourthMovie.poster_path}`;
-  animeTwoImage.src = `https://image.tmdb.org/t/p/w500${fifthMoive.poster_path}`;
-  animeThreeImage.src = `https://image.tmdb.org/t/p/w500${sixthMovie.poster_path}`;
-  horrorOneImage.src = `https://image.tmdb.org/t/p/w500${seventhMovie.poster_path}`;
-  horrorTwoImage.src = `https://image.tmdb.org/t/p/w500${eigthMovie.poster_path}`;
-  horrorThreeImage.src = `https://image.tmdb.org/t/p/w500${ninethMovie.poster_path}`;
-  titleOne.innerHTML = `${firstMovie.title}`;
-  titleTwo.innerHTML = `${secondMovie.title}`;
-  titleThree.innerHTML = `${thirdMovie.title}`;
-  ratingOne.innerHTML = ` Rating: ${Number(firstMovie.vote_average).toFixed(
+  try{
+
+    let myResponse = await fetch(
+      "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc",
+      options
+    );
+    let myData = await myResponse.json();
+    const firstMovie = myData.results[8];
+    const secondMovie = myData.results[11];
+    const thirdMovie = myData.results[7];
+    const fourthMovie = myData.results[0];
+    const fifthMoive = myData.results[3];
+    const sixthMovie = myData.results[1];
+    const seventhMovie = myData.results[4];
+    const eigthMovie = myData.results[13];
+    const ninethMovie = myData.results[12];
+    imageOne.src = `https://image.tmdb.org/t/p/w500${firstMovie.poster_path}`;
+    imageTwo.src = `https://image.tmdb.org/t/p/w500${secondMovie.poster_path}`;
+    imageThree.src = `https://image.tmdb.org/t/p/w500${thirdMovie.poster_path}`;
+    animeOneImage.src = `https://image.tmdb.org/t/p/w500${fourthMovie.poster_path}`;
+    animeTwoImage.src = `https://image.tmdb.org/t/p/w500${fifthMoive.poster_path}`;
+    animeThreeImage.src = `https://image.tmdb.org/t/p/w500${sixthMovie.poster_path}`;
+    horrorOneImage.src = `https://image.tmdb.org/t/p/w500${seventhMovie.poster_path}`;
+    horrorTwoImage.src = `https://image.tmdb.org/t/p/w500${eigthMovie.poster_path}`;
+    horrorThreeImage.src = `https://image.tmdb.org/t/p/w500${ninethMovie.poster_path}`;
+    titleOne.innerHTML = `${firstMovie.title}`;
+    titleTwo.innerHTML = `${secondMovie.title}`;
+    titleThree.innerHTML = `${thirdMovie.title}`;
+    ratingOne.innerHTML = ` Rating: ${Number(firstMovie.vote_average).toFixed(
     1
   )}`;
   ratingTwo.innerHTML = ` Rating: ${Number(secondMovie.vote_average).toFixed(
@@ -160,6 +162,9 @@ async function getData() {
   releaseDateOneHorror.innerHTML = `Release-Date: ${seventhMovie.release_date}`;
   releaseDateTwoHorror.innerHTML = `Release-Date: ${eigthMovie.release_date}`;
   releaseDateThreeHorror.innerHTML = `Release-Date: ${ninethMovie.release_date}`;
+}catch {
+  window.alert("Couldn't Get The Api\n Try Again Later")
+}
 }
 getData();
 
@@ -217,3 +222,7 @@ function enableLightMode() {
   body.classList.add("light-mode");
   logo.src = "images/LogoBlack.png";
 }
+// date and time
+let span = document.querySelector(".footer .container  span");
+let date = new Date();
+span.innerHTML = date.getFullYear();
